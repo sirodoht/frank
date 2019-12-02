@@ -18,7 +18,7 @@
 package hotp
 
 import (
-	"github.com/pquerna/otp"
+	"github.com/sirodoht/otp"
 	"io"
 
 	"crypto/hmac"

@@ -18,9 +18,6 @@
 package otp
 
 import (
-	"github.com/boombuler/barcode"
-	"github.com/boombuler/barcode/qr"
-
 	"crypto/md5"
 	"crypto/sha1"
 	"crypto/sha256"
@@ -28,7 +25,6 @@ import (
 	"errors"
 	"fmt"
 	"hash"
-	"image"
 	"net/url"
 	"strings"
 )
@@ -73,25 +69,6 @@ func NewKeyFromURL(orig string) (*Key, error) {
 
 func (k *Key) String() string {
 	return k.orig
-}
-
-// Image returns an QR-Code image of the specified width and height,
-// suitable for use by many clients like Google-Authenricator
-// to enroll a user's TOTP/HOTP key.
-func (k *Key) Image(width int, height int) (image.Image, error) {
-	b, err := qr.Encode(k.orig, qr.M, qr.Auto)
-
-	if err != nil {
-		return nil, err
-	}
-
-	b, err = barcode.Scale(b, width, height)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return b, nil
 }
 
 // Type returns "hotp" or "totp".
