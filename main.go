@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/sirodoht/otp/totp"
+	"github.com/sirodoht/frank/totp"
 )
 
 func main() {
