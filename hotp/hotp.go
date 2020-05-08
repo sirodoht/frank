@@ -18,18 +18,18 @@
 package hotp
 
 import (
-	"github.com/sirodoht/otp"
-	"io"
-
 	"crypto/hmac"
 	"crypto/rand"
 	"crypto/subtle"
 	"encoding/base32"
 	"encoding/binary"
 	"fmt"
+	"io"
 	"math"
 	"net/url"
 	"strings"
+
+	"github.com/sirodoht/frank/otp"
 )
 
 const debug = false

@@ -18,16 +18,16 @@
 package totp
 
 import (
-	"github.com/sirodoht/otp"
-	"github.com/sirodoht/otp/hotp"
-	"io"
-
 	"crypto/rand"
 	"encoding/base32"
+	"io"
 	"math"
 	"net/url"
 	"strconv"
 	"time"
+
+	"github.com/sirodoht/frank/hotp"
+	"github.com/sirodoht/frank/otp"
 )
 
 // Validate a TOTP using the current time.

@@ -18,12 +18,12 @@
 package hotp
 
 import (
-	"github.com/sirodoht/otp"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
-
 	"encoding/base32"
 	"testing"
+
+	"github.com/sirodoht/frank/otp"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 type tc struct {
