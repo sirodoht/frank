@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"time"
@@ -10,19 +9,20 @@ import (
 )
 
 func main() {
-	fmt.Println("Input secret:")
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	if scanner.Err() != nil {
-		panic("scanner error")
+	if len(os.Args) != 2 {
+		fmt.Println("frank — CLI TOTP generator")
+		fmt.Println("")
+		fmt.Println("Usage: frank [secret key]")
+		fmt.Println("")
+		fmt.Println("Example:")
+		fmt.Println("    frank C2DGYR26844297SAHI2SZW")
+		os.Exit(0)
 	}
-
-	secret := scanner.Text()
-
+	secret := os.Args[1]
 	t := time.Now()
 	token, err := totp.GenerateCode(secret, t)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("TOTP token: %s\n", token)
+	fmt.Println(token)
 }
