@@ -7,10 +7,8 @@ This is a standalone zero-dependencies TOTP/HOTP tool, forked out of pquerna's e
 ## Usage
 
 ```sh
-$ ./frank
-Input secret:
-A2LCVL4RWLVA6IIJDJ4F4X2IZB7S6FTW
-TOTP token: 608594
+$ ./frank CI5LZGDSGSN5VTA
+266728
 ```
 
 ## License

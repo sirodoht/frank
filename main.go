@@ -8,15 +8,21 @@ import (
 	"github.com/sirodoht/frank/totp"
 )
 
+func printHelp() {
+	fmt.Println("Usage:")
+	fmt.Println("  frank [secret key]")
+	fmt.Println("")
+	fmt.Println("Example:")
+	fmt.Println("  frank CI5LZGDSGSN5VTA")
+	os.Exit(0)
+}
+
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println("frank — CLI TOTP generator")
-		fmt.Println("")
-		fmt.Println("Usage: frank [secret key]")
-		fmt.Println("")
-		fmt.Println("Example:")
-		fmt.Println("    frank C2DGYR26844297SAHI2SZW")
-		os.Exit(0)
+		printHelp()
+	}
+	if os.Args[1] == "-h" {
+		printHelp()
 	}
 	secret := os.Args[1]
 	t := time.Now()
